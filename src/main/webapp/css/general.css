@@ -1,0 +1,428 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+
+/* 
+    Created on : 29/11/2017, 12:22:53 PM
+    Author     : Juan Rojas
+*/
+/*@import url('https://fonts.googleapis.com/css?family=Dosis:300,400,700,800');*/
+
+.green-so-bg {
+  background-color: #18a689;
+  border-color: #18a689;
+}
+
+.green-so-bg:hover {
+  background-color: #28ab90;
+  border-color: #28ab90;
+}
+
+.red-so-bg {
+  background-color: #ED333F;
+  border-color: #ED333F;
+}
+
+.red-so-bg:hover {
+  background-color: #e84550;
+  border-color: #e84550;
+}
+
+.red-so-bg:active {
+  background-color: #e84852;
+  border-color: #e84852;
+  color: #FFFFFF;
+}
+
+.blue-so-bg {
+  background-color: #5D8FC4;
+  border-color: #5D8FC4;
+}
+
+.yellow-so-bg {
+  background-color: #F7B63E;
+  border-color: #F7B63E;
+}
+
+.so-title-panel-bg {
+  background-color: #337AB7 !important;
+  color: #FFF !important;
+  /* height: 50px !important; */
+}
+
+.white {
+  color: white;
+}
+
+.content-viewer {
+  margin: 0px;
+  padding: 0px;
+  border-top-color: #525659;
+}
+
+.content-spinner {
+/* position: fixed;*/
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  /*background: rgba(0, 0, 0, 0.73);*/
+  z-index: 99999;
+}
+
+.center-spinner {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
+
+.fill {
+  min-height: 100%;
+  height: 100%;
+}
+
+.fill * {
+  min-height: 95%;
+  height: 100%;
+}
+
+/* *************** Bootbox - Standar SO *************** */
+
+.modal-header-conformidad .modal-header {
+  background: #1C84C6
+}
+
+.modal-header-notificacion .modal-header {
+  background: #1AB394
+}
+
+.modal-header-advertencia .modal-header {
+  background: #E9C341
+}
+
+.modal-header button.bootbox-close-button.close {
+  display: none
+}
+
+/* *************** Fin Bootbox - Standar SO *************** */
+
+.resize-none {
+  resize: none
+}
+
+.full-width {
+  width: 100%
+}
+
+/* *************** Chosen - Standar SO *************** */
+
+.chosen-container-single .chosen-single {
+  background: #ffffff;
+  box-shadow: none;
+  -moz-box-sizing: border-box;
+  background-color: #FFFFFF;
+  border: 1px solid #CBD5DD;
+  border-radius: 2px;
+  cursor: text;
+  height: auto !important;
+  margin: 0;
+  min-height: 30px;
+  overflow: hidden;
+  padding: 4px 12px;
+  position: relative;
+  width: 100%;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice {
+  background: #f1f1f1;
+  border: 1px solid #ededed;
+  border-radius: 2px;
+  box-shadow: none;
+  color: #333333;
+  cursor: default;
+  line-height: 13px;
+  margin: 3px 0 3px 5px;
+  padding: 3px 20px 3px 5px;
+  position: relative;
+}
+
+/* *************** Fin Chosen - Standar SO *************** */
+
+/* datatable - standar so */
+
+.datatable-header {
+  display: none !important
+}
+
+.dataTables_wrapper {
+  padding-bottom: 0px !important
+}
+
+.dataTables_length {
+  display: none !important
+}
+
+.dataTables_filter {
+  display: none !important
+}
+
+/*.datatable-scroll{
+    overflow:hidden
+}*/
+/* fin datatable - standar so */
+
+/* *************** Select2 custom styles *************** */
+
+.select2-container--default .select2-selection--single,
+.select2-container--default .select2-selection--multiple {
+  border-color: #e7eaec;
+}
+
+.select2-container .select2-selection--single {
+  height: 32px;
+}
+
+span.select2.select2-container.select2-container--default {
+  width: 100% !important;
+}
+
+.select2-container--default .select2-selection--single {
+  border-radius: 0px;
+}
+
+/* *************** Fin Select2 custom styles *************** */
+
+/* *************** CSS Helper for Gutterless Bootstrap 3 Columns *************** */
+
+span.label-14px {
+  font-size: 14px;
+}
+
+span.label {
+  font-size: 14px;
+}
+
+.m-b-1px {
+  margin-bottom: 1px;
+}
+
+.m-b-3px {
+  margin-bottom: 3px;
+}
+
+.m-b-5px {
+  margin-bottom: 5px;
+}
+
+.m-b-7px {
+  margin-bottom: 7px;
+}
+
+.m-b-9px {
+  margin-bottom: 9px;
+}
+
+.m-l-3px {
+  margin-left: 3px;
+}
+
+.m-l-5px {
+  margin-left: 5px;
+}
+
+.m-l-7px {
+  margin-left: 7px;
+}
+
+.m-l-9px {
+  margin-left: 9px;
+}
+
+.m-r-7px {
+  margin-right: 7px;
+}
+
+.m-r-9px {
+  margin-right: 9px;
+}
+
+.no-gutter>[class*='col-'] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/* Helpers */
+
+.b-r-s {
+  border-radius: 10px !important;
+}
+
+.b-r-m {
+  border-radius: 20px !important;
+}
+
+.b-r-m .select2-container--default .select2-selection--single {
+  border-radius: 20px;
+}
+
+.bg-grey-disable {
+  background-color: #e5e6e7;
+  border: 1px solid #e5e6e7;
+}
+
+.bg-grey {
+  background-color: #f7f7f7;
+  border: 1px solid #f7f7f7;
+}
+
+.bg-green {
+  background-color: #1ab394;
+  color: #FFFFFF;
+}
+
+.bg-blue {
+  background-color: #1c84c6;
+  color: #FFFFFF;
+}
+
+/* disable CSS de Bootstrap */
+
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+  background-color: #dadada;
+  opacity: 1;
+}
+
+.select2-container--default.select2-container--disabled .select2-selection--single {
+  background-color: #dadada;
+  cursor: default;
+}
+
+/* Evento de puntero */
+
+.pointer-event-none {
+  pointer-events: none;
+}
+
+.hide {
+  display: none;
+}
+
+/* button to-up */
+
+.lower-right {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+.lower-right .badge {
+  position: absolute;
+  top: -3px;
+  right: -4px;
+}
+
+.lower-right-open-small {
+  height: 45px;
+  width: 45px;
+  display: block;
+  background: #1ab394;
+  padding: 9px 8px;
+  text-align: center;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+.lower-right-open-small:hover {
+  color: white;
+  background: #1ab394;
+}
+
+/* no margin */
+
+.no-left {
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+.no-right {
+  margin-right: 0px;
+  padding-right: 0px;
+}
+
+.no-top {
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.no-bottom {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.padding-for-row {
+  padding-left: 15px;
+  padding-right: 15px;  
+}
+
+/* modify for template design */
+body {
+  background-color: #24344C !important;
+}
+
+.nav-header {    
+  background: #24344C !important;
+}
+
+.nav > li.active {  
+  background: #2b3d58 !important;
+}
+
+.navbar-default .nav > li > a:hover, .navbar-default .nav > li > a:focus {
+  background-color: #33445f !important;  
+}
+
+/* css for tbody datatable */
+
+td.highlight {
+  background-color: #337AB7 !important;
+  color: white !important
+}
+
+.table-hover>tbody>tr:hover {
+  background-color: #337AB7 !important;
+  color: white !important
+}
+
+title-font{
+  font-size:1.3em !important;
+  margin-bottom: 10px !important;
+}
+
+title-config{
+  margin-top:10px !important;
+  border:1px solid #dde2ec !important; 
+  height: 2px !important; 
+  vertical-align:baseline !important;
+}
+
+.dataTables_paginate {
+  margin: 5px 0 5px 0;
+}
+
+.dataTables_info {
+  float: left;
+  padding: 13px 0;
+  margin-bottom: 0px;
+}
+
+
