@@ -22,6 +22,10 @@ public interface UsuarioDAO {
 	public JSONObject Cargarcuartos(JSONObject json);
 
 	public JSONObject ObtenerInfoH(JSONObject json);
+
+    public JSONObject insertarReserva(JSONObject json);
+
+    public JSONObject listarReservaciones(JSONObject json);
 	
 		
 }

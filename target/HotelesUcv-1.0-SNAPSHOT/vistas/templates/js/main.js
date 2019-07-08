@@ -15,7 +15,6 @@ function GenerarDataSidebar(){
 			url: "../UsuarioValidacion?accion=InfoUsuario",
 			dataType: 'JSON',
 			success: function (data) {
-				debugger
 	$('.ta-avatar').attr('avatar', data.Apellidos.charAt(0));
   var td=`
 	<a href="javascript:void(0)" class="info" data-profile="open-menu">

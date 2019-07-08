@@ -31,11 +31,10 @@
 					</div>
 					<ul class="nav nav-pills nav-stacked">
 						<li class="sidebar-header">NAVIGATION</li>
-						<li><a href="index.html"><i class="zmdi zmdi-view-dashboard"></i>Dashboard</a></li>
 						<li class="nav-dropdown"><a href="#"><span></span><i class="zmdi zmdi-widgets"></i>Cards</a>
 							<ul class="nav-sub" data-index="0" style="display: none;">
-								<li><a href="card-templates.html">Card Templates</a></li>
-								<li><a href="card-demos.html">Card Demos</a></li>
+								<li><a href="ListarReservaciones.jsp">Tabla Reservaciones </a></li>
+								<li><a href="Reservas.jsp">Generar Reserva</a></li>
 							</ul>
 						</li>
 														</ul>

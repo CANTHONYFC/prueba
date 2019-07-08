@@ -28,9 +28,18 @@ public class Hotel extends HttpServlet {
 		switch (accion) {
 			case "CargarCuartos":
 				CargarCuartos(response, request);
-				break;	case "listarInformacionH":
+				break;	
+                        case "listarInformacionH":
 				listarInformacionH(response, request);
 				break;
+                        case "RegistrarReserva":
+				RegistrarReserva(response, request);
+				break;
+                                
+                        case "ListarReservaciones":
+				ListarReservaciones(response, request);
+				break;
+                                
 				default:
 		}
 	}
@@ -68,5 +77,46 @@ public class Hotel extends HttpServlet {
 		jsonImprimir.put("draw", dibujar);
 		out.println(jsonImprimir);
 	}
+
+    private void RegistrarReserva(HttpServletResponse response, HttpServletRequest request) throws IOException {
+        response.setContentType("application/json");
+        
+        HttpSession session_actual = request.getSession(true);
+       String dni= session_actual.getAttribute("dni").toString();
+		PrintWriter out = response.getWriter();
+		UsuarioService srv = new UsuarioService();
+
+		String jsonString = request.getParameter("json") ;
+		JSONObject json = new JSONObject(jsonString)
+		.put("dni",dni);
+		JSONObject rs = srv.insertarReserva(json);
+		out.print(rs);
+    }
+
+    private void ListarReservaciones(HttpServletResponse response, HttpServletRequest request) throws IOException {
+      response.setContentType("application/json");
+		try (PrintWriter out = response.getWriter()) {
+
+			UsuarioService srv = new UsuarioService();
+			String dibujar = request.getParameter("draw");
+			String jsonString = request.getParameter("json");
+
+			JSONObject json = new JSONObject(jsonString)
+				.put("length", Integer.parseInt(request.getParameter("length")))
+				.put("start", Integer.parseInt(request.getParameter("start")));
+
+			int cantidadRegistros = 0;
+			JSONObject jsonlistado = srv.listarReservaciones(json);
+			JSONObject jsonImprimir = new JSONObject();
+
+			cantidadRegistros = jsonlistado.getInt("cantidad");
+			                 System.out.println("esta lista"+jsonlistado);
+			jsonImprimir.put("data", jsonlistado.get("data"));
+			jsonImprimir.put("draw", dibujar);
+			jsonImprimir.put("recordsFiltered", cantidadRegistros);
+			jsonImprimir.put("recordsTotal", cantidadRegistros);
+			out.println(jsonImprimir);
+		}
+    }
 	
 }

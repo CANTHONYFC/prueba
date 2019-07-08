@@ -89,6 +89,31 @@ DAOFactory factoryMysql = DAOFactory.getDAOFactory(DAOFactory.MYSQL);
 
 
 	}
+
+    public JSONObject insertarReserva(JSONObject json) {
+       JSONObject obj = null;
+		try {
+			obj = daoUsuario.insertarReserva(json);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return obj;
+    }
+
+
+
+    public JSONObject listarReservaciones(JSONObject json) {
+      JSONObject retorno = null;
+		try {
+
+//daoPersonaWebMysql.listadoPersonalWeb(obj).getJSONArray("data")
+retorno = daoUsuario.listarReservaciones(json);
+	
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return retorno;
+    }
 	
 
 }

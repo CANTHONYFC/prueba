@@ -132,8 +132,10 @@ public class UsuarioMysqlDao implements UsuarioDAO {
         boolean status = true;
         JSONArray lista;
         try (Connection cn = MySqlDAOFactory.obtenerConexion("Tablet")) {
-            String query = "{call PRO_LISTAR_CUARTOS()}"; 
-            JSONArray params = new JSONArray();
+            String query = "{call PRO_LISTAR_INFO_CUARTOS(?)}"; 
+            JSONArray params = new JSONArray() 
+                    .put(json.get("codigo"));;
+            
             lista = DAOHelper.queryProcedure(cn, query, true, params);
             response.put("data", lista);
 
@@ -144,8 +146,74 @@ public class UsuarioMysqlDao implements UsuarioDAO {
             response.put("message", "Error en el proceso");
 
         }
-
         response.put("status", status);
         return response;
 	}
+
+    @Override
+    public JSONObject insertarReserva(JSONObject json) {
+        System.out.println(json);
+      	     JSONObject response = new JSONObject();
+        boolean status = true;
+        JSONArray lista;
+        try (Connection cn = MySqlDAOFactory.obtenerConexion("Tablet")) {
+            String query = "{call PRO_REGISTRAR_RESERVACION(?,?,?,?,?)}"; 
+            JSONArray params = new JSONArray() 
+                    .put(json.get("FechaInicio"))
+                      .put(json.get("FechaFin"))
+                      .put(json.get("codigo"))
+                      .put(json.get("CantidadDias")) 
+                       .put(json.get("dni"));
+            
+            lista = DAOHelper.queryProcedure(cn, query, true, params);
+            response.put("data", lista);
+
+            response.put("message", "Registro Exitoso");
+        } catch (Exception e) {
+            e.printStackTrace();
+            status = false;
+            response.put("message", "Error en el proceso");
+
+        }
+        response.put("status", status);
+        return response;
+    }
+
+    @Override
+    public JSONObject listarReservaciones(JSONObject json) {
+        JSONObject response = new JSONObject();	
+        boolean status = true;
+        int cantidad = 0;
+        JSONArray lista;		
+        try (Connection cn = MySqlDAOFactory.obtenerConexion("Tablet")) {
+					 
+            String query = "{call PRO_LISTAR_RESERVACIONES (?,?,?,?,?,?)}";
+           
+            JSONArray params = new JSONArray().put(json.get("start"))
+                    .put(json.get("length"))
+                    .put(json.get("filtro"))
+                    .put(json.get("estado"))
+                    .put(json.get("txtfechahasta"))
+                    .put(json.get("fechadesde"))
+                    ;
+
+            lista = DAOHelper.queryProcedure(cn, query, true, params);
+
+            response.put("data", lista);
+
+            if (lista.length() != 0) {
+                cantidad = lista.getJSONObject(0).getInt("1");
+            } else {
+                System.out.println("no ay registros disponibles");
+            }
+            response.put("message", "Se listaron correctamente");
+       
+         } catch (Exception e) {
+            e.printStackTrace();
+            status = false;
+            response.put("message", "Error en el proceso");}
+        response.put("cantidad", cantidad);
+        response.put("status", status);
+        return response;
+    }
 }
